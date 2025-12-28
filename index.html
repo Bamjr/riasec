@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap"
+    rel="stylesheet"
+  />
+  <title>BD RIASEC</title>
+</head>
+
+<body>
+  <!-- SVG filters: needed for the "hand-drawn edge wobble" -->
+  <svg width="0" height="0" style="position:absolute; left:-9999px; top:-9999px;">
+    <defs>
+      <filter id="squiggle-0">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="0" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-1">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="1" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-2">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-3">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-4">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="4" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
+      </filter>
+    </defs>
+  </svg>
+
+  <header class="header">
+    <p class="title" style="color:#1C4D8D;">
+      <span class="squiggle">
+        แบบทดสอบค้นหาและรู้จักความสนใจทางอาชีพผ่านการผจญภัยใต้ท้องทะเล
+      </span>
+    </p>
+
+    <p class="subtitle" style="color:#4988C4;">
+      <span class="squiggle">
+        พร้อมเงี่ยหูฟังและเขียนเรื่องราวตามเสียงของคลื่นตัวเองแล้วหรือยัง?
+      </span>
+    </p>
+  </header>
+
+  <main class="screen">
+
+    <div class="tap-text" style="color:#2C3D3C;">
+      <div class="squiggle title" >
+        ✏️
+      </div>
+      <div class="squiggle">
+        โปรดจรดปากกาของคุณที่ใดก็ได้เพื่อเริ่ม
+      </div>
+    <div>
+  </main>
+  <svg class="bottom-waves squiggle" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path
+      d="M0 60 Q150 20, 300 60 T600 60 T900 60 T1200 60 L1200 120 L0 120 Z"
+      fill="rgba(28,77,141,0.08)"
+    />
+    <path
+      d="M0 80 Q200 40, 400 80 T800 80 T1200 80 L1200 120 L0 120 Z"
+      fill="rgba(73,136,196,0.06)"
+    />
+  </svg>
+</body>
+</html>

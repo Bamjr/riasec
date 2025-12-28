@@ -1,0 +1,116 @@
+/* ===== Base / Reset ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Playpen Sans Thai", cursive;
+  font-weight: 300;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===== Layout ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #E4F3F2;
+  position: relative;
+}
+
+/* ===== Wrinkle paper overlay ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("pic/crumpledpaper.png");
+  background-repeat: repeat;
+  background-size: 600px 600px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  padding: 3% 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.4;
+  margin: 2rem 0 0.5rem 0;
+text-align:center;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 0 -10rem 0;
+}
+
+/* ===== Center screen ===== */
+.screen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.tap-text {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.bottom-waves{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .title { font-size: 1.4rem; }
+  .subtitle { font-size: 0.8rem; }
+  .tap-text { font-size: 0.7rem; }
+.bottom-waves{ height: 100px; }
+}
+
+
+/* ===== SVG Filter cycling for edge wobble ===== */
+@keyframes squiggle {
+  0%   { filter: url("#squiggle-0"); }
+  25%  { filter: url("#squiggle-1"); }
+  50%  { filter: url("#squiggle-2"); }
+  75%  { filter: url("#squiggle-3"); }
+  100% { filter: url("#squiggle-4"); }
+}
+
+/* Only squiggle (edge distortion) */
+.squiggle {
+  animation: squiggle 0.3s linear infinite;
+}
+
+/* Combine: hand wiggle + ink jitter + edge squiggle
+   (สำคัญ: ไม่งั้น animation จะทับกัน) */
+.doodle-wiggle.squiggle {
+  animation:
+    doodleMove 2.3s steps(2, end) infinite,
+    doodleInk 1.6s steps(2, end) infinite,
+    squiggle 0.3s linear infinite;
+}
