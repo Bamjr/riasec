@@ -83,12 +83,20 @@ text-align:center;
   pointer-events: none;
 }
 
+.footer {
+  text-align: center;
+  padding: 1% 5%;
+  position: relative;
+  z-index: 1;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .title { font-size: 1.4rem; }
   .subtitle { font-size: 0.8rem; }
   .tap-text { font-size: 0.7rem; }
 .bottom-waves{ height: 100px; }
+.footer-text { font-size: 0.8rem; }
 }
 
 @media (max-width: 430px) {
@@ -96,6 +104,7 @@ text-align:center;
   .subtitle { font-size: 0.6rem; }
   .tap-text { font-size: 0.5rem; }
 .bottom-waves{ height: 80px; }
+.footer-text { font-size: 0.7rem; }
 }
 
 
