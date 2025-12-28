@@ -91,6 +91,13 @@ text-align:center;
 .bottom-waves{ height: 100px; }
 }
 
+@media (max-width: 430px) {
+  .title { font-size: 1.2rem; }
+  .subtitle { font-size: 0.6rem; }
+  .tap-text { font-size: 0.5rem; }
+.bottom-waves{ height: 80px; }
+}
+
 
 /* ===== SVG Filter cycling for edge wobble ===== */
 @keyframes squiggle {
