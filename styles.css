@@ -33,10 +33,171 @@ body::before {
   z-index: 0;
 }
 
+.bg-decor{
+  position: fixed;
+  inset: 0;
+  z-index: 0;                
+  pointer-events: none;     
+  overflow: hidden;         
+}
+
+.decor{
+  position: absolute;
+
+
+  width: clamp(100px, 10vw, 150px);
+  height: auto;
+
+  opacity: 0.9; /* optional */
+  user-select: none;
+}
+.t{
+    top: 10%;
+    left: 5%;
+    width: clamp(100px, 15vw, 200px);
+  }
+.f{
+    bottom: 20%;
+    right: 10%;
+    width: clamp(100px, 15vw, 200px);
+  }
+.sq{
+    bottom: 10%;
+    left: 15%;
+    width: clamp(100px, 15vw, 200px);
+  }
+.tr{
+    bottom: 2%;
+    right: 5%;
+    width: clamp(100px, 15vw, 200px);
+}
+
+.dp{
+    top: 25%;
+    left: 1%;
+    width: clamp(100px, 15vw, 200px);
+  }
+
+.r{
+  bottom: 0.2%;
+  left: 5%;
+  width: clamp(100px, 15vw, 250px);
+}
+
+.wk{
+  bottom: 4%;
+  left: 3%;
+  width: clamp(100px, 15vw, 250px);
+}
+
+.jel{
+  top: 10%;
+  right: 3%;
+  width: clamp(200px, 15vw, 600px);
+}
+
+.shk{
+  bottom: 20%;
+  left: 0%;
+  width: clamp(150px,15vw, 400px);
+
+}
+
+.shel{
+  bottom: 1%;
+  right: 0%;
+  width: clamp(50px, 15vw, 150px);}
+
+.ksh{
+  top: 36%;
+  right: 0%;
+  width: clamp(200px, 15vw, 400px);}
+
+
+
+nav {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+background-color: rgba(95, 149, 152, 1);
+padding: 1rem;
+position: relative;
+z-index: 1;
+
+
+
+
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+font-size: 2rem;
+font-weight: 800;
+color: #E4F3F2;
+
+}
+
+.buttonlogo{
+display: flex;
+justify-content: center;
+align-items: center;
+color: rgba(95, 149, 152, 1);
+background-color: #E4F3F2;
+border: 0.5px solid #E4F3F2;
+border-radius: 5px;
+padding-left: 1%;
+padding-right: 1%;
+cursor: pointer;
+
+
+
+}
+.hamburger {
+  display: none;              
+  width: 3rem;
+  height: 2rem;
+  background: rgba(95, 149, 152, 1);
+  border: 0.5px solid #E4F3F2;
+  border-radius: 8px;
+  cursor: pointer;
+
+  
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #E4F3F2;
+  border-radius: 2px;
+}
+
+.spotify-wrapper {
+  width: min(90vw, 420px);   /* 👈 หัวใจของ responsive */
+  margin: 1.5rem auto;
+}
+
+.spotify-wrapper iframe {
+  width: clamp(220px, 60vw, 360px);
+  height: clamp(100px, 15vw, 152px);
+  border-radius: 12px;
+  border: none;
+}
+
+
+
 /* ===== Header ===== */
 .header {
   text-align: center;
-  padding: 3% 5%;
+  padding: 1% 5%;
   position: relative;
   z-index: 1;
 }
@@ -54,6 +215,7 @@ text-align:center;
   font-size: 1.2rem;
   line-height: 1.6;
   margin: 0 0 -10rem 0;
+  text-align: center;
 }
 
 /* ===== Center screen ===== */
@@ -90,37 +252,44 @@ text-align:center;
   z-index: 1;
 }
 
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .title { font-size: 1.4rem; }
   .subtitle { font-size: 0.8rem; }
   .tap-text { font-size: 0.7rem; }
-.bottom-waves{ height: 100px; }
-.footer-text { font-size: 0.8rem; }
+  .bottom-waves{ height: 100px; }
+  .footer-text { font-size: 0.8rem; }
+  .logo{ font-size: 1rem; }
+  .buttonlogo{ display: none; }
+  .hamburger { display: flex; }
 }
 
 @media (max-width: 430px) {
   .title { font-size: 1.2rem; }
   .subtitle { font-size: 0.7rem; }
   .tap-text { font-size: 0.6rem; }
-.bottom-waves{ height: 80px; }
-.footer-text { font-size: 0.7rem; }
-}
+  .bottom-waves{ height: 80px; }
+  .footer-text { font-size: 0.7rem; }
+  .logo{ font-size: 0.9rem; }
+  .buttonlogo{ display: none; }
+  .hamburger { display: flex; }
 
+}
 
 /* ===== SVG Filter cycling for edge wobble ===== */
 @keyframes squiggle {
-  0%   { filter: url("#squiggle-0"); }
-  25%  { filter: url("#squiggle-1"); }
-  50%  { filter: url("#squiggle-2"); }
-  75%  { filter: url("#squiggle-3"); }
-  100% { filter: url("#squiggle-4"); }
+  0%   { filter: url(#squiggle-0); }
+  25%  { filter: url(#squiggle-1); }
+  50%  { filter: url(#squiggle-2); }
+  75%  { filter: url(#squiggle-3); }
+  100% { filter: url(#squiggle-4); }
 }
 
-/* Only squiggle (edge distortion) */
 .squiggle {
   animation: squiggle 0.3s linear infinite;
 }
+
 
 /* Combine: hand wiggle + ink jitter + edge squiggle
    (สำคัญ: ไม่งั้น animation จะทับกัน) */
