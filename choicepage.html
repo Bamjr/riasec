@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap"
+        rel="stylesheet" />
+    <script src="/script/choice.js" defer></script>
+    <title>BD RIASEC</title>
+</head>
+
+<body>
+    <!-- SVG filters: needed for the "hand-drawn edge wobble" -->
+    <svg width="0" height="0" style="position:absolute; left:-9999px; top:-9999px;">
+        <defs>
+            <filter id="squiggle-0">
+                <feTurbulence baseFrequency="0.02" numOctaves="3" seed="0" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+
+            <filter id="squiggle-1">
+                <feTurbulence baseFrequency="0.02" numOctaves="3" seed="1" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+
+            <filter id="squiggle-2">
+                <feTurbulence baseFrequency="0.02" numOctaves="3" seed="2" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+
+            <filter id="squiggle-3">
+                <feTurbulence baseFrequency="0.02" numOctaves="3" seed="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+
+            <filter id="squiggle-4">
+                <feTurbulence baseFrequency="0.02" numOctaves="3" seed="4" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="bg-decor" aria-hidden="true">
+        <img class="squiggle decor t" src="pic/turtle.png" alt="" />
+        <img class="squiggle decor f" src="pic/fish.png" alt="" />
+        <img class="squiggle decor sq" src="pic/squid.png" alt="" />
+        <img class="squiggle decor tr" src="pic/treasure.png" alt="" />
+        <img class="squiggle decor dp" src="pic/dolphin.png" alt="" />
+        <img class="squiggle decor r" src="pic/rock.png" alt="" />
+        <img class="squiggle decor wk" src="pic/Wakame.png" alt="" />
+        <img class="squiggle decor jel" src="pic/jellyfish.png" alt="" />
+        <img class="squiggle decor shk" src="pic/shark.png" alt="" />
+        <img class="squiggle decor shel" src="pic/shell.png" alt="" />
+        <img class="squiggle decor ksh" src="pic/killerwhale.png" alt="" />
+    </div>
+
+
+    <nav>
+        <div class="logo">🐬BODIN RIASEC</div>
+        <div class="buttonlogo">Contributors & Contact</div>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main class="screen scrollable">
+        <div class="Qbox">
+            <header class="question-header squiggle">
+                ฉากที่ 1 -สถานที่ที่คุณตื่นขึ้น
+            </header>
+            <figure class="story-visual squiggle">
+                <img src="pic/eyes.png" alt="ภาพประกอบฉากใต้น้ำที่มีสิ่งมีชีวิตใต้ทะเลต่างๆ" />
+            </figure>
+            <section class="question-content ">
+                <p>
+                    คุณลืมตาขึ้นช้า ๆ ในความมืดสีครามของทะเลลึก
+                    แสงพรายน้ำรำไรเหมือนฝันที่ยังคลุมเครือ
+                    และรอบตัว… คือดินแดนที่คุณไม่แน่ใจว่ามีอยู่จริงหรือเกิดจากมโนสำนึกของตัวเอง
+
+                    ภาพแรกที่เห็นคือ…
+                </p>
+            </section>
+
+
+
+            <section class="choices-grid">
+                <button class="choice" type="button" data-choice="A">แนวปะการังหลากสี ส่องประกายเหมือนงานรื่นเริงของท้องทะเล ฝูงปลาว่ายวนรอบตัวคุณราวกำลังทักทาย </button>
+                <button class="choice" type="button" data-choice="B">ถ้ำหินเงียบลึกลับ มีสาหร่ายเรืองแสงพริ้วไหวเหมือนเปลวไฟใต้ทะเล</button>
+                <button class="choice" type="button" data-choice="C">พื้นทรายกว้างสุดสายตา โขดหินสูงตระหง่านราวกำแพงจากยุคเก่าที่ไม่มีใครรู้ที่มา</button>
+                <button class="choice" type="button" data-choice="D">ซากเรือเก่าจมดิ่ง เงียบเหงาแต่แฝงกลิ่นอายของเรื่องราวที่ถูกซัดทิ้งโดยกาลเวลา</button>
+            </section>
+        </div>
+
+
+
+    </main>
+
+
+
+
+
+    <footer class="footer">
+
+        <p class="footer-text" style="color:#A9A9A9;">
+            MADE BY Bamjr and PBL TEAM &copy; 2025
+        </p>
+    </footer>
+    <svg class="bottom-waves squiggle" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0 60 Q150 20, 300 60 T600 60 T900 60 T1200 60 L1200 120 L0 120 Z" fill="rgba(28,77,141,0.08)" />
+        <path d="M0 80 Q200 40, 400 80 T800 80 T1200 80 L1200 120 L0 120 Z" fill="rgba(73,136,196,0.06)" />
+    </svg>
+</body>
+
+</html>

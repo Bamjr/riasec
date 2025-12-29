@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet" />
-  <script src="/script/indexscript.js" defer></script>
+  <script src="/script/story1.js" defer></script> 
   <title>BD RIASEC</title>
 </head>
 
@@ -66,40 +66,24 @@
     </button>
   </nav>
 
-  <header class="header">
-    <p class="title" style="color:#1C4D8D;">
-      <span class="squiggle">
-        แบบทดสอบค้นหาและรู้จักความสนใจทางอาชีพผ่านการผจญภัยใต้ท้องทะเล
-      </span>
-    </p>
-
-    <p class="subtitle" style="color:#4988C4;">
-      <span class="squiggle ">
-        พร้อมเงี่ยหูฟังและเขียนเรื่องราวตามเสียงของคลื่นตัวเองแล้วหรือยัง?
-      </span>
-    </p>
-  </header>
-
-  <br>
-  <br>
-
   <main id="tapArea" class="screen">
+  <div class="squiggle story-box">
+    <p id="storyLine1" class="story-text1"></p>
 
+    
+    <p id="storyLine2" class="story-text1" hidden></p>
+  </div>
 
-    <div class="tap-text" style="color:#2C3D3C;">
-
-      <div class="squiggle">
-        <iframe data-testid="embed-iframe" style="border-radius:12px"
-          src="https://open.spotify.com/embed/track/3lEKVsTevzcoffF6uSudZe?utm_source=generator" width="100%"
-          height="352" frameBorder="0" allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-      <div class="squiggle" style="text-align: center; margin-top: 1rem;">
-        โปรดจรดปากกาของคุณที่ใดก็ได้เพื่อเริ่ม
-      </div>
+</div>
 
   </main>
+
+
+
   <footer class="footer">
+        <div id="continueHint" class="substory-text1" hidden>
+    กดที่ใดก็ได้เพื่อไปต่อ...
+  </div>
     <p class="footer-text" style="color:#A9A9A9;">
       MADE BY Bamjr and PBL TEAM &copy; 2025
     </p>
