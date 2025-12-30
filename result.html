@@ -1,26 +1,139 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet" />
   <script src="script/result.js" defer></script>
   <title>BD RIASEC - Result</title>
 </head>
-<body>
-  <main class="screen scrollable">
-    <div class="Qbox">
-      <header class="question-header">🐚 ตอนจบ — เสียงสุดท้ายของคลื่นในใจ</header>
 
-      <section class="question-content">
-        <p id="mainResult">กำลังสรุปผล...</p>
-        <pre id="scoreList" style="white-space:pre-line; margin-top: 12px;"></pre>
-      </section>
+<body class="page-result">
 
-      <section class="choices-grid">
-        <button class="choice" id="restartBtn" type="button">เล่นใหม่</button>
-      </section>
+  <!-- ===== SVG squiggle filters ===== -->
+  <svg width="0" height="0" style="position:absolute; left:-9999px; top:-9999px;">
+    <defs>
+      <filter id="squiggle-0">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="0" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-1">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="1" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-2">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-3">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+
+      <filter id="squiggle-4">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="4" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="bg-decor" aria-hidden="true">
+    <img class="squiggle decor t" src="pic/turtle.png" alt="" />
+    <img class="squiggle decor f" src="pic/fish.png" alt="" />
+    <img class="squiggle decor sq" src="pic/squid.png" alt="" />
+    <img class="squiggle decor tr" src="pic/treasure.png" alt="" />
+    <img class="squiggle decor dp" src="pic/dolphin.png" alt="" />
+    <img class="squiggle decor r" src="pic/rock.png" alt="" />
+    <img class="squiggle decor wk" src="pic/Wakame.png" alt="" />
+    <img class="squiggle decor jel" src="pic/jellyfish.png" alt="" />
+    <img class="squiggle decor shk" src="pic/shark.png" alt="" />
+    <img class="squiggle decor shel" src="pic/shell.png" alt="" />
+    <img class="squiggle decor ksh" src="pic/killerwhale.png" alt="" />
+  </div>
+
+  <nav>
+    <div class="logo">
+      <a href="index.html" style="color:#E4F3F2; text-decoration:none;">🐬BODIN RIASEC</a>
     </div>
+    <div class="buttonlogo">
+      <a href="cc.html" style="color: rgba(95,149,152,1); text-decoration:none;">Contributors & Contact</a>
+    </div>
+    <a href="cc.html" class="profile-btn" aria-label="Contributors & Contact">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#E4F3F2">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 20c0-4 16-4 16 0z" />
+      </svg>
+    </a>
+
+
+  </nav>
+
+
+  <header class="header">
+    <p class="title" style="color:#1C4D8D;">
+      <span class="squiggle">
+        ผลลัพธ์การผจญภัยใต้ท้องทะเลของคุณ
+      </span>
+    </p>
+    <p class="subtitle" style="color:#4988C4;">
+      <span class="squiggle">
+        เสียงคลื่นได้บอกตัวตนของคุณแล้ว
+      </span>
+    </p>
+  </header>
+
+
+  <main class="screen scrollable">
+    <section class="result-card Qbox squiggle" aria-label="Result">
+
+      <h1 id="resultTitle" class="result-title">กำลังสรุปผล...</h1>
+
+      <figure class="result-figure">
+        <img id="resultImg" class="result-img" src="" alt="ผลลัพธ์ของคุณ" />
+      </figure>
+
+      <div class="result-actions">
+        <button id="shareBtn" class="choice" type="button">แชร์ผลลัพธ์</button>
+        <button id="restartBtn" class="choice" type="button">เล่นใหม่</button>
+      </div>
+
+      <p id="shareHint" class="result-hint" aria-live="polite"></p>
+
+      <div class="result-survey">
+        <div><a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfTIbFBRz8hsYWcsYkqSRiwWzELR0_zNrMZblraLeJN_CHlQA/viewform"
+            target="_blank" rel="noopener noreferrer" class="survey-link ">
+            💬 ช่วยทำแบบสอบถามความพึงพอใจสั้น ๆ ให้หน่อยนะคะ นะคะ นะคะ
+          </a></div>
+        <div><a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfTIbFBRz8hsYWcsYkqSRiwWzELR0_zNrMZblraLeJN_CHlQA/viewform"
+            target="_blank" rel="noopener noreferrer">
+            🐬 https://forms.gle/arbhYhdyvLHTH2dF9</a></div>
+      </div>
+
+
+
+    </section>
   </main>
+
+  <footer class="footer">
+    <p class="footer-text" style="color:#A9A9A9;">
+      MADE BY Bamjr and PBL TEAM &copy; 2025
+    </p>
+  </footer>
+
+  <svg class="bottom-waves squiggle" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0 60 Q150 20, 300 60 T600 60 T900 60 T1200 60 L1200 120 L0 120 Z" fill="rgba(28,77,141,0.08)" />
+    <path d="M0 80 Q200 40, 400 80 T800 80 T1200 80 L1200 120 L0 120 Z" fill="rgba(73,136,196,0.06)" />
+  </svg>
+
 </body>
+
 </html>

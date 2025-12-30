@@ -15,11 +15,26 @@
   <!-- SVG filters -->
   <svg width="0" height="0" style="position:absolute; left:-9999px; top:-9999px;">
     <defs>
-      <filter id="squiggle-0"><feTurbulence baseFrequency="0.02" numOctaves="3" seed="0" result="noise" /><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" /></filter>
-      <filter id="squiggle-1"><feTurbulence baseFrequency="0.02" numOctaves="3" seed="1" result="noise" /><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" /></filter>
-      <filter id="squiggle-2"><feTurbulence baseFrequency="0.02" numOctaves="3" seed="2" result="noise" /><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" /></filter>
-      <filter id="squiggle-3"><feTurbulence baseFrequency="0.02" numOctaves="3" seed="3" result="noise" /><feDisplacementMap in="SourceGraphic" in2="noise" scale="3" /></filter>
-      <filter id="squiggle-4"><feTurbulence baseFrequency="0.02" numOctaves="3" seed="4" result="noise" /><feDisplacementMap in="SourceGraphic" in2="noise" scale="4" /></filter>
+      <filter id="squiggle-0">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="0" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+      <filter id="squiggle-1">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="1" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+      <filter id="squiggle-2">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+      <filter id="squiggle-3">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+      <filter id="squiggle-4">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" seed="4" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
+      </filter>
     </defs>
   </svg>
 
@@ -43,20 +58,25 @@
       <a href="index.html" style="color:#E4F3F2; text-decoration:none;">🐬BODIN RIASEC</a>
     </div>
 
-    <!-- ทำให้ปุ่มนี้ลิงก์ไปหน้า Members -->
+
     <a class="buttonlogo" href="cc.html" style="text-decoration:none;">Contributors & Contact</a>
 
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="cc.html" class="profile-btn" aria-label="Contributors & Contact">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#E4F3F2">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 20c0-4 16-4 16 0z" />
+      </svg>
+    </a>
+
+
   </nav>
 
-  <!-- ใช้ screen + story-box เดิม -->
-  <main class="screen scrollable" >
-    <section class="squiggle story-box" style="max-width: 720px;">
-      <h1 class="question-header" >👥 สมาชิก & ครูที่ปรึกษา</h1>
 
-      <!-- Members list -->
+  <main class="screen scrollable">
+    <section class="squiggle story-box" style="max-width: 720px;">
+      <h1 class="question-header">👥 สมาชิก & ครูที่ปรึกษา</h1>
+
+
       <div class="Qbox animate-in" style="margin-top: 0;">
         <p class="story-text1" style="margin: 0.2rem 0;"><b>สมาชิก</b></p>
 
@@ -93,4 +113,5 @@
     <path d="M0 80 Q200 40, 400 80 T800 80 T1200 80 L1200 120 L0 120 Z" fill="rgba(73,136,196,0.06)" />
   </svg>
 </body>
+
 </html>

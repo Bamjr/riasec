@@ -125,8 +125,6 @@ position: relative;
 z-index: 1;
 
 
-
-
 }
 
 .logo{
@@ -154,34 +152,46 @@ cursor: pointer;
 
 
 
+
 }
-.hamburger {
-  display: none;              
+.profile-btn{
   width: 3rem;
-  height: 2rem;
-  background: rgba(95, 149, 152, 1);
-  border: 0.5px solid #E4F3F2;
-  border-radius: 8px;
-  cursor: pointer;
-
-  
-  display: none;
-  flex-direction: column;
-  justify-content: center;
+  height: 2.8rem;
+  display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+
+  font-size: 1.4rem;
+  text-decoration: none;
+
+  background: rgba(95, 149, 152, 1);
+  border: 2px solid #E4F3F2;
+  border-radius: 20px;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #E4F3F2;
-  border-radius: 2px;
+.profile-btn:hover{
+  background-color: rgba(120, 175, 178, 1);
+  transform: translateY(-1px);
 }
+
+.profile-btn{
+  display: none;
+}
+
+
+
+
+
+
+
+/* ===== Spotify Embed ===== */
+
 
 .spotify-wrapper {
-  width: min(90vw, 420px);   /* 👈 หัวใจของ responsive */
+  width: min(90vw, 420px);  
   margin: 1.5rem auto;
 }
 
@@ -265,7 +275,7 @@ text-align:center;
   .footer-text { font-size: 0.8rem; }
   .logo{ font-size: 1rem; }
   .buttonlogo{ display: none; }
-  .hamburger { display: flex; }
+  .profile-btn{ display: flex; }
 }
 
 @media (max-width: 430px) {
@@ -276,7 +286,7 @@ text-align:center;
   .footer-text { font-size: 0.7rem; }
   .logo{ font-size: 0.9rem; }
   .buttonlogo{ display: none; }
-  .hamburger { display: flex; }
+  .profile-btn{ display: flex; }
 
 }
 
@@ -334,23 +344,23 @@ text-align:center;
 } 
 
 .story-box{
-  width: min(86vw, 720px);      /* responsive + ไม่กว้างเกิน */
+  width: min(86vw, 720px);    
   text-align: center;
   padding: 1rem;
 }
 
 .story-text1{
   font-family: "Playpen Sans Thai", cursive;
-  font-size: clamp(1rem, 2.6vw, 1.35rem);  /* ไม่ใหญ่ไป */
+  font-size: clamp(1rem, 2.6vw, 1.35rem);  
   font-weight: 400;
   color: #1C4D8D;
   line-height: 1.85;
   letter-spacing: 0.02em;
   margin: 0.5rem 0;
-  white-space: pre-wrap;         /* ทำให้ขึ้นบรรทัดใหม่จาก \n ได้ */
+  white-space: pre-wrap;        
 }
 
-/* เคอร์เซอร์กระพริบ (optional) */
+
 .cursor{
   display: inline-block;
   width: 0.6ch;
@@ -358,7 +368,7 @@ text-align:center;
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* ปุ่มบอกให้กด (ซ่อน/โชว์ด้วย JS) */
+
 .substory-text1{
   font-family: "Playpen Sans Thai", cursive;
   font-size: clamp(0.85rem, 2.4vw, 1.1rem);
@@ -367,7 +377,7 @@ text-align:center;
   opacity: 0.9;
 }
 
-/* ไฮไลท์คำสีทองหลังพิมพ์เสร็จ */
+
 .gold-glow {
   color: #D4AF37; /* gold */
   animation: goldGlow 1.6s ease-in-out forwards;
@@ -428,7 +438,7 @@ text-align:center;
 
 .Qbox {
   margin-top: 5rem;
-  width: min(90vw, 720px);   /* 👈 ไม่ชนจอ + ไม่ใหญ่เกิน */
+  width: min(90vw, 720px);  
   background-color: rgba(255, 255, 255, 0.36);
   border-radius: 18px;
   padding: 1.5rem 1.8rem;
@@ -482,16 +492,16 @@ text-align:center;
   align-items: center;
   justify-content: center;
 
-  /* padding ไหลตามจอ */
+  
   padding: clamp(10px, 2.5vw, 22px);
 }
 
-/* การ์ดเรื่องราวเหมือน “จอในภาพ” */
+
 .story-card {
-  /* กว้างไหล: มือถือไม่ล้น / จอใหญ่ไม่กว้างเกิน */
+  
   width: clamp(280px, 92vw, 520px);
 
-  /* สูงไหล: กันเตี้ยไปบนมือถือ + ไม่สูงเกินบนจอใหญ่ */
+ 
   min-height: clamp(520px, 78vh, 680px);
 
   background: rgba(255,255,255,0.78);
@@ -502,7 +512,7 @@ text-align:center;
   display: flex;
   flex-direction: column;
 
-  /* padding ในการ์ด */
+ 
   padding: clamp(12px, 2.6vw, 18px) clamp(12px, 2.8vw, 18px) clamp(10px, 2.2vw, 14px);
 
   opacity: 0;
@@ -510,7 +520,7 @@ text-align:center;
   animation: fadeUp 1.8s ease-out forwards;
 }
 
-/* ส่วนหัว */
+
 .story-top {
   text-align: center;
   padding: clamp(4px, 1.2vw, 8px) clamp(6px, 1.6vw, 10px) clamp(8px, 2vw, 12px);
@@ -524,7 +534,7 @@ text-align:center;
   color: #1C4D8D;
 }
 
-/* ส่วนกลาง: ข้อความ + ภาพ */
+
 .story-mid {
   flex: 1;
   display: flex;
@@ -539,17 +549,17 @@ text-align:center;
 
 .story-textEND {
   margin: 0 auto;
-  max-width: clamp(32ch, 6vw + 34ch, 46ch); /* ไหลแบบอ่านง่าย */
+  max-width: clamp(32ch, 6vw + 34ch, 46ch); 
   font-size: clamp(0.88rem, 2.4vw, 1rem);
   line-height: clamp(1.45, 0.8vw + 1.4, 1.65);
   color: #1b2b2a;
 }
 
-/* ภาพประกอบกลางจอ */
+
 .story-figure {
   margin: clamp(6px, 2vw, 12px) auto 0;
 
-  /* กว้างไหล */
+  
   width: clamp(180px, 70vw, 340px);
 }
 
@@ -586,13 +596,13 @@ text-align:center;
 /* ===== End Story Page 2 ===== */
 
 .story-mid--full {
-  padding: 0;              /* ไม่ให้มีช่องว่างรอบ */
+  padding: 0;             
 }
 
 .story-figure--full {
   width: 100%;
   margin: 0;
-  position: relative;      /* เพื่อให้ overlay absolute ได้ */
+  position: relative;      
   flex: 1;
   display: grid;
   place-items: center;
@@ -600,11 +610,11 @@ text-align:center;
 
 .story-figure--full img {
   width: 100%;
-  height: min(62vh, 520px);  /* ปรับได้ */
+  height: min(62vh, 520px);  
   object-fit: contain;
 }
 
-/* ข้อความทับกลางล่าง */
+
 .story-overlay {
   position: absolute;
   left: 50%;
@@ -615,30 +625,110 @@ text-align:center;
   padding: clamp(8px, 1.8vw, 12px);
 }
 
-/* ให้ text อ่านง่ายบนรูป (เลือกใช้ได้) */
+
 .story-overlay .story-textEND {
   margin: 0;
   text-shadow: 0 1px 0 rgba(255,255,255,0.65);
 }
 
-/* Press anywhere ให้อยู่ชิดล่างในกรอบ */
+
 .story-bottom {
   padding-top: 0;
   padding-bottom: clamp(6px, 1.2vw, 10px);
 }
 
-/* เปิด scroll ให้เฉพาะ main ที่ต้องเลื่อน */
+
 .screen.scrollable{
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  /* สำคัญ: อย่า center ตอนเป็นหน้าที่ยาว */
+  
   justify-content: flex-start;
   align-items: center;
 }
 
-/* กัน footer/bottom-waves บังเนื้อหาเวลาเลื่อนถึงล่างสุด */
+
 .screen.scrollable{
-  padding-bottom: 200px; /* ปรับได้ตามความสูงคลื่น */
+  padding-bottom: 200px; 
+}
+
+
+/* ===== Result Page Add-on ===== */
+.result-card{
+  max-width: 660x;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.result-title{
+  font-weight: 800;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  margin: 6px 0 14px;
+  color: #1C4D8D;
+}
+
+.result-figure{
+  margin: 0;
+  padding: 0;
+}
+
+.result-img{
+  width: min(92vw, 420px);
+  height: auto;
+  border-radius: 14px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.result-actions{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.result-hint{
+  margin-top: 10px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.result-debug{
+  margin-top: 12px;
+  text-align: left;
+}
+
+ 
+  .page-result .subtitle{
+    margin: 0 0 1rem 0 !important; /* ลบ -10rem */
+  }
+
+  
+  .page-result .screen.scrollable{
+    justify-content: flex-start; /* เผื่อบางหน้าไม่ได้ set */
+    padding-top: 8px;
+  }
+
+  .result-survey{
+  margin-top: 12px;
+  text-align: center;
+}
+
+.survey-link{
+  display: inline-block;
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  color: #1C4D8D;
+  text-decoration: none;
+  opacity: 0.85;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.survey-link:hover{
+  opacity: 1;
+  background-color: rgba(28,77,141,0.08);
 }
