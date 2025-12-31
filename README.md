@@ -53,14 +53,6 @@ The website was tested by **50 voluntary participants** from Bodindecha School.
 - Average satisfaction score: **4.745 / 5**
 - Users reported that the website is easy to use, engaging, and provides clear results
 
-## 🛠 Technologies Used
-
-- **HTML** – Website structure
-- **CSS** – Layout and visual design
-- **JavaScript** – Interactivity and assessment logic
-- **Figma** – UX/UI design
-- **GitHub & GitHub Pages** – Version control and deployment
-
 
 ## 📜 License
 
